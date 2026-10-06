@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0056d2">
+  <title>Your result | Trooquiz</title>
+  <script src="js/nav.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card result">
+      <p id="course" class="result-subject"></p>
+
+      <div id="ring" class="ring" role="img" aria-label="Score">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle id="ring-fg" class="ring-fg" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div id="score" class="ring-text">0%</div>
+      </div>
+
+      <div id="badge" class="badge"></div>
+      <p id="detail" class="muted"></p>
+      <p id="message"></p>
+
+      <a id="retake" class="btn" href="quiz.html">Retake this subject</a>
+      <a class="btn secondary" href="start.html">Choose another subject</a>
+      <button id="share" class="btn secondary" type="button">Share result</button>
+    </section>
+  </main>
+
+  <script src="js/result.js"></script>
+</body>
+</html>

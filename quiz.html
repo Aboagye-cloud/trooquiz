@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0056d2">
+  <title>Quiz | Trooquiz</title>
+  <script src="js/nav.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="quiz-top">
+        <span id="course-name"><strong>Loading…</strong></span>
+        <span id="counter"></span>
+      </div>
+
+      <div class="track"><div id="progress" class="fill"></div></div>
+      <div class="track"><div id="timer-bar" class="fill timer-fill"></div></div>
+      <div id="timer-text" class="timer-text"></div>
+
+      <h2 id="question">Loading questions…</h2>
+      <div id="options" class="options"></div>
+      <p class="hint">Tip: press A, B, C or D on your keyboard to answer.</p>
+
+      <p id="notice" class="notice"></p>
+      <p id="error" class="error" hidden></p>
+      <button id="retry" class="btn secondary" type="button" hidden>Try again</button>
+      <a id="back" class="btn secondary" href="index.html" hidden>Back to start</a>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

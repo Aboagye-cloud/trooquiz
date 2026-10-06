@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0056d2">
+  <title>Admin | Trooquiz</title>
+  <script src="../js/nav.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <main class="admin-main">
+    <nav class="tabs">
+      <button class="tab active" data-tab="questions" type="button">Questions</button>
+      <button class="tab" data-tab="courses" type="button">Subjects</button>
+      <button class="tab" data-tab="levels" type="button">Levels</button>
+    </nav>
+
+    <!-- ================= QUESTIONS ================= -->
+    <section id="tab-questions" class="tabpanel">
+      <div class="panel">
+        <h2>Choose a subject</h2>
+        <div class="row">
+          <div>
+            <label for="q-level">Level</label>
+            <select id="q-level"></select>
+          </div>
+          <div>
+            <label for="q-course">Subject</label>
+            <select id="q-course"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 id="q-form-title">Add a question</h2>
+        <form id="q-form">
+          <div class="field">
+            <label for="q-text">Question</label>
+            <textarea id="q-text" required></textarea>
+          </div>
+          <div class="grid-2">
+            <div class="field"><label for="q-a">Option A</label><input id="q-a" type="text" required></div>
+            <div class="field"><label for="q-b">Option B</label><input id="q-b" type="text" required></div>
+            <div class="field"><label for="q-c">Option C</label><input id="q-c" type="text" required></div>
+            <div class="field"><label for="q-d">Option D</label><input id="q-d" type="text" required></div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="q-correct">Correct answer</label>
+              <select id="q-correct" required>
+                <option value="">Select…</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+            </div>
+            <button id="q-submit" class="btn" type="submit">Add question</button>
+            <button id="q-cancel" class="btn secondary" type="button" hidden>Cancel edit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Questions in this subject</h2>
+        <p id="q-count" class="muted"></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Question</th><th>Answer</th><th></th></tr></thead>
+            <tbody id="q-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COURSES ================= -->
+    <section id="tab-courses" class="tabpanel" hidden>
+      <div class="panel">
+        <h2>Add a subject</h2>
+        <form id="course-form" class="row">
+          <div>
+            <label for="course-level">Level</label>
+            <select id="course-level" required></select>
+          </div>
+          <div>
+            <label for="course-name">Subject name</label>
+            <input id="course-name" type="text" required>
+          </div>
+          <button class="btn" type="submit">Add subject</button>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>All subjects</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Level</th><th>Subject</th><th></th></tr></thead>
+            <tbody id="courses-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LEVELS ================= -->
+    <section id="tab-levels" class="tabpanel" hidden>
+      <div class="panel">
+        <h2>Add a level</h2>
+        <form id="level-form" class="row">
+          <div>
+            <label for="level-name">Level name</label>
+            <input id="level-name" type="text" placeholder="e.g. Level 300" required>
+          </div>
+          <button class="btn" type="submit">Add level</button>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>All levels</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Level</th><th>Subjects</th><th></th></tr></thead>
+            <tbody id="levels-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

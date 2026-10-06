@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0056d2">
+  <title>Take a quiz | Trooquiz</title>
+  <script src="js/nav.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="start-page">
+  <main class="start-wrap">
+    <!-- Header -->
+    <div class="course-header">
+      <h1>Take a Quiz</h1>
+    </div>
+
+    <!-- Step 1: level -->
+    <section id="step-level">
+      <h3 class="outer-section-title">Choose your level</h3>
+      <hr class="rule">
+      <div class="content-box">
+        <p class="lead">Tap the level you are in.</p>
+        <div id="level-list" class="level-rows"></div>
+      </div>
+    </section>
+
+    <!-- Step 2: subject -->
+    <section id="step-subject" hidden>
+      <h3 id="subject-title" class="outer-section-title">Choose a subject</h3>
+      <hr class="rule">
+      <div class="content-box">
+        <div id="subject-list" class="choice-list"></div>
+      </div>
+
+      <div class="nav-row">
+        <button id="back-to-level" class="btn-secondary" type="button">&larr; Previous Step</button>
+      </div>
+
+      <!-- Revealed after a subject is picked -->
+      <div id="assessment" class="content-box assessment" hidden>
+        <h3>Quiz Assessment</h3>
+        <p id="assessment-msg"></p>
+        <button id="start" class="btn-quiz" type="button">Start Quiz Now &rarr;</button>
+      </div>
+    </section>
+
+    <p id="msg" class="error content-box" hidden></p>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/start.js"></script>
+</body>
+</html>
