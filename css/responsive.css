@@ -17,13 +17,17 @@ img, svg { max-width: 100%; }
 /* Phone browsers with a moving address bar: use the real visible height */
 @supports (min-height: 100dvh) {
   body { min-height: 100dvh; }
-  .hero { min-height: 80dvh; }
+  .hero { min-height: min(82dvh, 700px); }
 }
 
 /* ---------- Notches and rounded screen corners ---------- */
 
 .site-header { padding-top: env(safe-area-inset-top); }
 .site-header-inner {
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+}
+.hero-inner {
   padding-left: max(20px, env(safe-area-inset-left));
   padding-right: max(20px, env(safe-area-inset-right));
 }
@@ -54,7 +58,7 @@ body.start-page .site-footer { padding-bottom: calc(24px + env(safe-area-inset-b
 /* ---------- Tablets ---------- */
 
 @media (max-width: 1024px) {
-  .hero-inner { padding: 4rem 2.25rem; gap: 2rem; }
+  .hero-inner { padding-top: 4rem; padding-bottom: 4rem; gap: 2rem; }
   .why { gap: 2.5rem; }
 }
 
@@ -77,6 +81,13 @@ body.start-page .site-footer { padding-bottom: calc(24px + env(safe-area-inset-b
 .why-art { min-width: min(280px, 100%); }
 .hero-stats { flex-wrap: wrap; }
 
+/* ---------- Hero photo is only for large screens with a mouse ---------- */
+
+@media (max-width: 1024px), (pointer: coarse) {
+  .hero-photo { display: none; }
+  .hero-copy { max-width: 640px; }
+}
+
 /* ---------- Phones ---------- */
 
 @media (max-width: 600px) {
@@ -88,14 +99,15 @@ body.start-page .site-footer { padding-bottom: calc(24px + env(safe-area-inset-b
 
   /* Homepage */
   .landing { padding-top: 12px; }
-  .hero { border-radius: 14px; }
-  .hero-inner { padding: 2.25rem 1.25rem; gap: 1.5rem; }
+  .hero { min-height: 0; }
+  .hero-inner { padding-top: 3rem; padding-bottom: 3.25rem; gap: 1.5rem; }
+  .live-tag { margin-bottom: 1.1rem; font-size: 0.72rem; }
   .hero h1 { margin-bottom: 1rem; }
-  .hero p { font-size: 1.05rem; margin-bottom: 1.75rem; }
-  .hero-actions { gap: 1.25rem; }
+  .hero p { font-size: 1.04rem; margin-bottom: 1.75rem; }
+  .hero-actions { gap: 1.75rem; }
   .cta { width: 100%; text-align: center; }
-  .hero-stats { gap: 0.9rem 1.5rem; padding-left: 1rem; }
-  .hero-figure img { max-height: 300px; }
+  .hero-stats > div { padding: 0 1.1rem; }
+  .hero-stats strong { font-size: 1.5rem; }
 
   .testimonials { margin-top: 4rem; }
   .section-head { margin-bottom: 2rem; }
