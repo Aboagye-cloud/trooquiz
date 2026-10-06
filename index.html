@@ -6,17 +6,21 @@
   <meta name="theme-color" content="#0056d2">
   <title>Trooquiz</title>
   <script src="js/nav.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
   <link rel="preload" as="image" href="images/secondstudent.webp" type="image/webp">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <main class="landing">
+  <main>
 
     <!-- ===== Hero ===== -->
     <section class="hero">
-      <div class="hero-bg"></div>
+      <div class="hero-bg">
+        <img src="images/secondstudent.webp" alt="" fetchpriority="high" decoding="async"
+             onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/secondstudent.png'}else{this.remove()}">
+      </div>
       <div class="hero-inner">
         <div class="hero-copy">
           <div class="live-tag">Trooquiz STEM Practice</div>
@@ -44,6 +48,8 @@
         </div>
       </div>
     </section>
+
+    <div class="landing">
 
     <!-- ===== Testimonials ===== -->
     <section class="testimonials">
@@ -142,7 +148,10 @@
 
     <!-- ===== Banner ===== -->
     <section class="banner">
-      <div class="banner-bg"></div>
+      <div class="banner-bg">
+        <img src="images/seventhstudent.webp" alt="" loading="lazy" decoding="async"
+             onerror="if(!this.dataset.f){this.dataset.f=1;this.src='images/seventhstudent.png'}else{this.remove()}">
+      </div>
       <div class="banner-copy">
         <span class="eyebrow">STEM Without Borders</span>
         <h2>Practise from Anywhere, Anytime</h2>
@@ -192,6 +201,7 @@
         <div class="answer">Yes. The site adapts to phones, tablets and computers.</div>
       </details>
     </section>
+    </div>
   </main>
 </body>
 </html>
