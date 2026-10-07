@@ -65,6 +65,58 @@
         </form>
       </div>
 
+      <!-- Import many questions at once -->
+      <details class="panel import-panel">
+        <summary>Import questions from JSON</summary>
+        <p class="muted">Add many questions at once to the subject chosen above. Paste your JSON or choose a .json file, check it, then import.</p>
+        <p id="imp-target" class="imp-target"></p>
+
+        <div class="row">
+          <div>
+            <label for="imp-file">Choose a .json file</label>
+            <input id="imp-file" type="file" accept=".json,application/json">
+          </div>
+          <button id="imp-template" class="btn secondary" type="button">Download template</button>
+        </div>
+
+        <div class="field">
+          <label for="imp-text">Or paste the JSON here</label>
+          <textarea id="imp-text" class="code" spellcheck="false" placeholder="Paste your questions here"></textarea>
+        </div>
+
+        <label class="check"><input type="checkbox" id="imp-shuffle" checked> Shuffle the answer positions (recommended)</label>
+        <p class="muted small-note">Mixes up which letter is correct, so students cannot guess a favourite letter. Turn it off only if an option says something like "all of the above".</p>
+
+        <div class="row">
+          <button id="imp-check" class="btn secondary" type="button" disabled>Check questions</button>
+          <button id="imp-run" class="btn" type="button" disabled>Import</button>
+        </div>
+
+        <div id="imp-summary" class="imp-summary" hidden></div>
+
+        <details class="imp-format">
+          <summary>See the format</summary>
+          <pre>[
+  {
+    "question": "What does CPU stand for?",
+    "options": [
+      "Central Processing Unit",
+      "Computer Personal Unit",
+      "Central Program Utility",
+      "Control Processing Unit"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "What is 7 x 8?",
+    "options": ["54", "56", "58", "64"],
+    "answer": "56"
+  }
+]</pre>
+          <p class="muted">Each question needs <strong>question</strong>, exactly four <strong>options</strong>, and the <strong>answer</strong>. The options can be a list of four, or an object with the keys A, B, C and D. The answer can be the letter A, B, C or D, or the exact text of the correct option. Other fields (such as id, difficulty or explanation) are ignored. The list can also sit inside {"questions": [ ... ]}. Up to 500 questions per import.</p>
+        </details>
+      </details>
+
       <div class="panel">
         <h2>Questions in this subject</h2>
         <p id="q-count" class="muted"></p>
